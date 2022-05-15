@@ -15,6 +15,8 @@ function sum(a, b) { //eslint-disable-line
   return [mySum, myStr];
 }
 
+
+
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
 
@@ -53,12 +55,19 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
+// remember other functions sum and multiply still active, and use algebra PEDMAS to format and solve
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  let sumMultiArrElement1 = sum(sum(a, b)[0], c)[0];
+  let multiplyArrElement2 = multiply(multiply(a, b)[0], c)[0];
 
+  let thirdElementStr = `${a} and ${b} and ${c} sum to ${sumMultiArrElement1}.`;
+  let fourthElementStr = `The product of ${a} and ${b} and ${c} is ${multiplyArrElement2}.`;
+
+  return [sumMultiArrElement1, multiplyArrElement2, thirdElementStr, fourthElementStr];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
